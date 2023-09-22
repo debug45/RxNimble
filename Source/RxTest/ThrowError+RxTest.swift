@@ -4,7 +4,7 @@ import RxTest
 
 /// A Nimble matcher that succeeds when the actual events emit an error
 /// of any type.
-public func throwError<T: Equatable>() -> Predicate<RecordedEvents<T>> {
+public func throwError<T: Equatable>() -> Nimble.Predicate<RecordedEvents<T>> {
     func extractError(_ recorded: RecordedEvents<T>?) -> [Error]? {
         func extractError<E>(_ recorded: Recorded<Event<E>>) -> Error? {
             return recorded.value.error
